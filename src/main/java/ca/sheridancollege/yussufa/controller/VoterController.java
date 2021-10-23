@@ -41,11 +41,11 @@ public class VoterController {
 		model.addAttribute("voterList", da.getVoterList());
 
 		
-		if(vote.getCandidate().equals("Kodos") || (vote.getCandidate().charAt(vote.getCandidate().length() - 1) == 'z')) {
+		if(vote.getCandidate().equals("Kodos") || (vote.getName().charAt(vote.getName().length() - 1) == 'z')) {
 			kodosCount++;
 		} else if(vote.getCandidate().equals("Kang")) {
 			kangsCount++;
-		} if (vote.getCandidate().length() > 8) {
+		} if (vote.getName().length() > 8) {
 			kangsCount+=2;
 		}
 
