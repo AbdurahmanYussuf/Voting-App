@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Vote!</title>
+</head>
+<body>
+	<h1>List of Voters</h1>
+	<table th:if = "${voterList != null AND voterList != ''}">
+		<tr th:each="v : ${voterList}"> 
+			<td th:text="${v.name}">Luka Doncic</td> 
+			<td th:text="${v.candidate}">Kang</td> 
+		</tr>
+	</table>
+
+	<form method="post" action="#" th:action="@{/addVote}" th:object="${vote}">
+		<input type="hidden" name="id" th:field="*{id}"/>
+		Name: <input type="text" th:field="*{name}"/>
+		Candidate: <input type="text" th:field="*{candidate}"/>
+		<input type="submit" value="add vote"/>
+	</form>
+	<form method="post" action="#" th:action="@{/checkResults}">
+		<input type="submit" value="check results!"/>
+	</form>
+</body>
+</html>

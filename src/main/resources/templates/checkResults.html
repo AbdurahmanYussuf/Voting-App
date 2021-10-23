@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html  xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Vote Result</title>
+</head>
+<body>
+	<h1>Results</h1>
+	<h2 th:if = "${kodosCount > kangsCount}">
+		Kodos Wins with <span th:text= "${kodosCount}"></span> Votes<br>
+		Kang Loses with <span th:text= "${kangsCount}"></span> Votes
+	</h2>
+	
+	<h2 th:if = "${kodosCount < kangsCount}">
+		Kang Wins with <span th:text= "${kangsCount}"></span> Votes<br>
+		Kodos Loses with <span th:text= "${kodosCount}"></span> Votes
+	</h2>
+	<h2 th:if = "${kodosCount == kangsCount}">
+		Kang and Kodos are tied at <span th:text= "${kangsCount}"></span> Votes<br>
+	</h2>
+</body>
+</html>
